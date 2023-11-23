@@ -75,7 +75,7 @@ const RockNacional: React.FunctionComponent<RockNacionalProps> = ({
               sx={{
                 backgroundColor: "transparent",
                 padding: 2,
-                marginTop: "5rem",
+                marginTop: "3rem",
                 marginBottom: "1rem",
                 borderBottom: "1px solid white",
                 borderRadius: "0px",
@@ -106,7 +106,7 @@ const RockNacional: React.FunctionComponent<RockNacionalProps> = ({
                         letterSpacing: "0.2rem",
                       }}
                     >
-                      <Typography sx={{ marginLeft: "-6rem" }}>SONG</Typography>
+                      <Typography sx={{ marginLeft: "-6rem" }}>CANCIONES</Typography>
                     </TableCell>
                     <TableCell
                       align="center"
@@ -118,7 +118,7 @@ const RockNacional: React.FunctionComponent<RockNacionalProps> = ({
                       }}
                     >
                       <Typography sx={{ marginLeft: "-5rem" }}>
-                        ARTIST
+                        ARTISTA
                       </Typography>
                     </TableCell>
                     <TableCell
@@ -143,24 +143,14 @@ const RockNacional: React.FunctionComponent<RockNacionalProps> = ({
                         letterSpacing: "0.2rem",
                       }}
                     >
-                      TIME
+                      DURACIÓN
                     </TableCell>
-                    <TableCell
-                      align="center"
-                      sx={{
-                        backgroundColor: "transparent",
-                        color: "aliceblue",
-                        fontSize: "14px",
-                        letterSpacing: "0.2rem",
-                      }}
-                    >
-                      OPTIONS
-                    </TableCell>
+                   
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {rocknacional[0].songs.map((song, index) => {
-                    return verTodasLasCanciones || index < 5 ? (
+                    return verTodasLasCanciones || index < 10 ? (
                       <TableRow
                         sx={{
                           "&:last-child td, &:last-child th": { border: 0 },
@@ -298,7 +288,7 @@ const RockNacional: React.FunctionComponent<RockNacionalProps> = ({
                             color: "aliceblue",
                           }}
                         >
-                          <ShareIcon />
+                          
                         </TableCell>
                       </TableRow>
                     ) : null;
@@ -314,7 +304,7 @@ const RockNacional: React.FunctionComponent<RockNacionalProps> = ({
                 >
                   {verTodasLasCanciones ? (
                     <Typography sx={{ letterSpacing: "0.2rem" }}>
-                      Show Less
+                      Mostrar menos
                       <KeyboardArrowUpIcon
                         sx={{
                           position: "absolute",
@@ -326,7 +316,7 @@ const RockNacional: React.FunctionComponent<RockNacionalProps> = ({
                     </Typography>
                   ) : (
                     <Typography sx={{ letterSpacing: "0.2rem" }}>
-                      Show More
+                      Mostrar más
                       <KeyboardArrowDownIcon
                         sx={{
                           position: "absolute",
@@ -370,4 +360,6 @@ const ContainerButton = styled("div")(() => ({
   marginBottom: "5rem",
 }));
 
-const Container = styled("div")(() => ({}));
+const Container = styled("div")(() => ({
+  marginBottom: "10rem"
+}));

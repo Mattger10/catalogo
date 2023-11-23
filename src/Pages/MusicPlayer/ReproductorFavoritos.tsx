@@ -37,6 +37,8 @@ const ReproductorFavoritos: React.FC<ReproductorFavoritosProps> = ({
   const [currentRandomIndex, setCurrentRandomIndex] = useState(-1);
   const progressBarRef = useRef<HTMLDivElement | null>(null);
   const [isReproductorVisible, setIsReproductorVisible] = useState(true);
+  const [isImageRotating, setIsImageRotating] = useState(false);
+
   
 
   const findSelectedSongIndex = (songName: string): number => {
@@ -73,12 +75,15 @@ const ReproductorFavoritos: React.FC<ReproductorFavoritosProps> = ({
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
+        setIsImageRotating(false); // Detener la rotación de la imagen
       } else {
         audioRef.current.play();
+        setIsImageRotating(true); // Iniciar la rotación de la imagen
       }
       setIsPlaying((prevState) => !prevState);
     }
   };
+  
 
   const playNextSong = () => {
     if (isShuffleMode) {
@@ -114,6 +119,7 @@ const ReproductorFavoritos: React.FC<ReproductorFavoritosProps> = ({
       audioRef.current.pause();
       if (isPlaying) {
         audioRef.current.play();
+        setIsImageRotating(true);
       }
     }
   }, [currentSongIndex, isPlaying]);
@@ -166,7 +172,9 @@ const ReproductorFavoritos: React.FC<ReproductorFavoritosProps> = ({
       <div>
         <IconsContainer>
           <IconWrapper>
-            <Img src={cancionesFavoritas[currentSongIndex].icon} alt="" />
+            <Img src={cancionesFavoritas[currentSongIndex].icon} alt="" style={{
+    animation: isImageRotating ? "rotation 5s linear infinite" : "none",
+  }} />
             <Typography
               sx={{
                 color: "#ccc",
@@ -176,7 +184,7 @@ const ReproductorFavoritos: React.FC<ReproductorFavoritosProps> = ({
                 fontSize: "1.2vw",
               }}
             >
-              {cancionesFavoritas[currentSongIndex].artists_evolved.join(", ")}
+              {cancionesFavoritas[currentSongIndex].songName}
             </Typography>
             <Typography
               sx={{
@@ -187,7 +195,7 @@ const ReproductorFavoritos: React.FC<ReproductorFavoritosProps> = ({
                 fontSize: "1vw",
               }}
             >
-              {cancionesFavoritas[currentSongIndex].songName}
+              {cancionesFavoritas[currentSongIndex].artists_evolved.join(", ")}
             </Typography>
             <RepeatIcon
               onClick={() => setIsRepeatMode((prevMode) => !prevMode)}
@@ -423,11 +431,22 @@ backgroundColor: "#0b0c17",
 }));
 
 const Img = styled("img")(() => ({
-position: "fixed",
-bottom: 0,
-left: 0,
-width: "5vw",
-height: "10vh",
+  position: "fixed",
+  bottom: 0,
+  left: 0,
+  width: "5vw",
+  height: "10vh",
+  borderRadius: "50%", // Agrega bordes redondeados para hacer la imagen circular
+  animation: "rotation 5s linear infinite", // Aplica la animación de rotación
+  zIndex: 1,
+  "@keyframes rotation": {
+    "0%": {
+      transform: "rotate(0deg)", // Rotación inicial en 0 grados
+    },
+    "100%": {
+      transform: "rotate(360deg)", // Rotación completa en 360 grados
+    },
+  },
 }));
 
 const ProgressBarContainer = styled(Box)(() => ({
@@ -437,7 +456,7 @@ height: 4,
 backgroundColor: "#333",
 marginTop: "-5rem",
 cursor: "pointer",
-zIndex: -999,
+zIndex: 0,
 }));
 
 interface ProgressBarProps {

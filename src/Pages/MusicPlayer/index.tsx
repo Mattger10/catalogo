@@ -16,8 +16,6 @@ const MusicPlayer: FunctionComponent<MusicPlayerProps> = ({handleSelectSong}) =>
 
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [seleccionarArtista, setSeleccionarArtista] = useState<string> ("");
-    const [seleccionarCancion, setSeleccionarCancion] = useState<string | null>(null);
-    const [showReproductor, setShowReproductor] = useState(false);
   
     
 
@@ -33,23 +31,10 @@ const MusicPlayer: FunctionComponent<MusicPlayerProps> = ({handleSelectSong}) =>
 
     return ( 
         <Container>
-             {/* <Button sx={{
-                display: "flex",
-                justifyContent: "center",
-                backgroundColor: "rgba(254, 254, 254, 0.214)",
-                color: "white",
-                padding: "10px 55px 10px 55px",
-                marginTop: "1rem",
-                ":hover": { backgroundColor: "rgba(254, 254, 254, 0.214)" },
-              }}><Typography sx={{ textTransform: "none" }}>What are you loking for? </Typography></Button> */}
-            {/* <Img src="" alt="" /> */}
             <Img />
             <ResponsiveAppBar mostrarTabla={mostrarTabla} alternarMostrarTabla={alternarMostrarTabla} />
             <Box sx={{padding: 5}} >
             <Recommended mostrarTabla={true} handleSelectSong={handleSelectSong} />
-            
-       
-            
             {/* <ArtistsRow onImageClick={handleImageClick} /> */}
             </Box>
         </Container>

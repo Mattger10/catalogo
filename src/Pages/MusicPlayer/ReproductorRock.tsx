@@ -45,6 +45,8 @@ const ReproductorRock: FunctionComponent<ReproductorRockProps> = ({
   const [isSliderVisible, setIsSliderVisible] = useState(false);
   const sliderTimerRef = useRef<NodeJS.Timeout | null>(null);
   const [isReproductorVisible, setIsReproductorVisible] = useState(true);
+  const [isImageRotating, setIsImageRotating] = useState(false);
+
 
   const handleVolumeIconMouseEnter = () => {
     setIsSliderVisible(true);
@@ -76,12 +78,15 @@ const ReproductorRock: FunctionComponent<ReproductorRockProps> = ({
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
+        setIsImageRotating(false); // Detener la rotación de la imagen
       } else {
         audioRef.current.play();
+        setIsImageRotating(true); // Iniciar la rotación de la imagen
       }
       setIsPlaying((prevState) => !prevState);
     }
   };
+  
 
   const playNextSong = () => {
     if (isShuffleMode) {
@@ -117,6 +122,7 @@ const ReproductorRock: FunctionComponent<ReproductorRockProps> = ({
       audioRef.current.pause();
       if (isPlaying) {
         audioRef.current.play();
+        setIsImageRotating(true);
       }
     }
   }, [currentSongIndex, isPlaying]);
@@ -168,7 +174,9 @@ const ReproductorRock: FunctionComponent<ReproductorRockProps> = ({
         <div>
           <IconsContainer>
             <IconWrapper>
-              <Img src={currentSongData.icon} alt="" />
+              <Img src={currentSongData.icon} alt=""  style={{
+    animation: isImageRotating ? "rotation 5s linear infinite" : "none",
+  }}/>
               <Typography
                 sx={{
                   color: "#ccc",
@@ -430,6 +438,17 @@ const Img = styled("img")(() => ({
   left: 0,
   width: "5vw",
   height: "10vh",
+  borderRadius: "50%", // Agrega bordes redondeados para hacer la imagen circular
+  animation: "rotation 5s linear infinite", // Aplica la animación de rotación
+  zIndex: 1,
+  "@keyframes rotation": {
+    "0%": {
+      transform: "rotate(0deg)", // Rotación inicial en 0 grados
+    },
+    "100%": {
+      transform: "rotate(360deg)", // Rotación completa en 360 grados
+    },
+  },
 }));
 
 const ProgressBarContainer = styled(Box)(() => ({
@@ -439,7 +458,7 @@ const ProgressBarContainer = styled(Box)(() => ({
   backgroundColor: "#333",
   marginTop: "-5rem",
   cursor: "pointer",
-  zIndex: -999,
+  zIndex: 0,
 }));
 
 interface ProgressBarProps {

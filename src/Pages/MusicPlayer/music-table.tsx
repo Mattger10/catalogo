@@ -16,7 +16,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import artistas from "./artists.json";
 import ReproductorArtists from "./ReproductorArtists";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
-import HeartBrokenIcon from '@mui/icons-material/HeartBroken';
+import HeartBrokenIcon from "@mui/icons-material/HeartBroken";
 
 interface MusicTableProps {
   seleccionar: string;
@@ -83,7 +83,7 @@ const MusicTable: React.FunctionComponent<MusicTableProps> = ({
   if (seleccionarArtista) {
     if (filteredRows.length === 0) {
       return (
-        <div>
+        <CajaFavoritos>
           {rows.map((row, index) => {
             return index < 1 ? (
               <Button
@@ -96,8 +96,8 @@ const MusicTable: React.FunctionComponent<MusicTableProps> = ({
                   backgroundColor: "#ed215e",
                   color: "white",
                   padding: "4px 30px 4px 30px",
-                  marginLeft: "16.3rem",
-                  marginTop: "-12.6rem",
+                  marginLeft: "15rem",
+                  marginTop: "-9.5rem",
                   borderRadius: "30px",
 
                   ":hover": {
@@ -121,8 +121,8 @@ const MusicTable: React.FunctionComponent<MusicTableProps> = ({
               backgroundColor: showFavorites ? "#ed215e" : "transparent",
               color: "white",
               padding: "5px 5px 5px 5px",
-              marginLeft: "26.5rem",
-              marginTop: "-12.6rem",
+              marginLeft: "25rem",
+              marginTop: "-9.5rem",
               borderRadius: "50px",
               borderRadiusTop: "30px",
 
@@ -136,19 +136,30 @@ const MusicTable: React.FunctionComponent<MusicTableProps> = ({
           >
             <FavoriteBorderIcon />
           </Button>
-        <Typography sx={{
-          display: "flex",
-          justifyContent: "center",
-          color: "white",
-          fontSize: "38px",
-          marginTop: "10rem",
-          fontFamily: "font2",
-        }}>
-          No hay favoritos seleccionados <HeartBrokenIcon sx={{position: "absolute", fontSize: "38px", marginTop: "0.6rem", marginLeft: "38rem", color: "#ed215e"}} /> 
-        </Typography>
-        </div>
+          <Typography
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              color: "white",
+              fontSize: "38px",
+              marginTop: "7rem",
+              fontFamily: "font2",
+            }}
+          >
+            No hay favoritos seleccionados{" "}
+            <HeartBrokenIcon
+              sx={{
+                position: "absolute",
+                fontSize: "38px",
+                marginTop: "0.6rem",
+                marginLeft: "38rem",
+                color: "#ed215e",
+              }}
+            />
+          </Typography>
+        </CajaFavoritos>
       );
-    } 
+    }
 
     return (
       <div>
@@ -165,8 +176,8 @@ const MusicTable: React.FunctionComponent<MusicTableProps> = ({
                   backgroundColor: "#ed215e",
                   color: "white",
                   padding: "4px 30px 4px 30px",
-                  marginLeft: "16.3rem",
-                  marginTop: "-7.6rem",
+                  marginLeft: "15rem",
+                  marginTop: "-6.5rem",
                   borderRadius: "30px",
 
                   ":hover": {
@@ -190,8 +201,8 @@ const MusicTable: React.FunctionComponent<MusicTableProps> = ({
               backgroundColor: showFavorites ? "#ed215e" : "transparent",
               color: "white",
               padding: "5px 5px 5px 5px",
-              marginLeft: "26.5rem",
-              marginTop: "-7.6rem",
+              marginLeft: "25rem",
+              marginTop: "-6.5rem",
               borderRadius: "50px",
               borderRadiusTop: "30px",
 
@@ -211,13 +222,29 @@ const MusicTable: React.FunctionComponent<MusicTableProps> = ({
           sx={{
             backgroundColor: "transparent",
             padding: 2,
-            marginTop: "5rem",
+            marginTop: "0rem",
             borderBottom: "1px solid white",
             borderRadius: "0px",
             boxShadow: "none",
+            "@media (max-width: 560px)": {
+              width: "25%",
+              backgroundColor: "blue",
+              marginLeft: "30rem",
+              marginTop: "20rem"
+             },
           }}
         >
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <Table
+            sx={{
+              minWidth: 650,
+              "@media (max-width: 560px)": {
+                width: "100%",
+                
+                backgroundColor: "red"
+               },
+            }}
+            aria-label="simple table"
+          >
             <TableHead>
               <Typography sx={{ color: "white", fontSize: "22px" }}>
                 Top Tracks
@@ -238,7 +265,16 @@ const MusicTable: React.FunctionComponent<MusicTableProps> = ({
                     letterSpacing: "0.2rem",
                   }}
                 >
-                  <Typography sx={{ marginLeft: "-6rem" }}>SONG</Typography>
+                  <Typography
+                    sx={{
+                      marginLeft: "-6rem",
+                      "@media (max-width: 390px)": {
+                        marginLeft: "5rem",
+                      },
+                    }}
+                  >
+                    CANCIONES
+                  </Typography>
                 </TableCell>
                 <TableCell
                   align="center"
@@ -249,7 +285,16 @@ const MusicTable: React.FunctionComponent<MusicTableProps> = ({
                     letterSpacing: "0.2rem",
                   }}
                 >
-                  <Typography sx={{ marginLeft: "-5rem" }}>ARTIST</Typography>
+                  <Typography
+                    sx={{
+                      marginLeft: "-5rem",
+                      "@media (max-width: 390px)": {
+                        marginLeft: "5rem",
+                      },
+                    }}
+                  >
+                    ARTISTA
+                  </Typography>
                 </TableCell>
                 <TableCell
                   align="center"
@@ -271,24 +316,14 @@ const MusicTable: React.FunctionComponent<MusicTableProps> = ({
                     letterSpacing: "0.2rem",
                   }}
                 >
-                  TIME
+                  DURACIÓN
                 </TableCell>
-                <TableCell
-                  align="center"
-                  sx={{
-                    backgroundColor: "transparent",
-                    color: "aliceblue",
-                    fontSize: "14px",
-                    letterSpacing: "0.2rem",
-                  }}
-                >
-                  OPTIONS
-                </TableCell>
+               
               </TableRow>
             </TableHead>
             <TableBody>
               {filteredRows.map((row, index) => {
-                return verTodasLasCanciones || index < 5 ? (
+                return verTodasLasCanciones || index < 10 ? (
                   <TableRow
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
@@ -381,7 +416,7 @@ const MusicTable: React.FunctionComponent<MusicTableProps> = ({
                       }}
                     >
                       <Typography sx={{ marginLeft: "10rem" }}>
-                        {row.artists_evolved.join(", ")}
+                        {row.artista}
                       </Typography>
                     </TableCell>
                     <TableCell
@@ -409,7 +444,7 @@ const MusicTable: React.FunctionComponent<MusicTableProps> = ({
                         color: "aliceblue",
                       }}
                     >
-                      <ShareIcon />
+                     
                     </TableCell>
                   </TableRow>
                 ) : null;
@@ -478,4 +513,8 @@ const StyledButton = styled(Button)(() => ({
 const ContainerButton = styled("div")(() => ({
   display: "flex",
   justifyContent: "center",
+}));
+
+const CajaFavoritos = styled("div")(() => ({
+  marginBottom: "10rem"
 }));

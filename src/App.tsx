@@ -28,6 +28,12 @@ import ReproductorFavoritos from "./Pages/MusicPlayer/ReproductorFavoritos";
 import rocknacional from "./Pages/MusicPlayer/Rocknacional.json"
 import recommended from "./Pages/MusicPlayer/recommended.json"
 import artistas from "./Pages/MusicPlayer/artists.json"
+import PagSearch from "./Pages/MusicPlayer/pagSearch";
+import Books from "./Pages/Librería/books";
+import Details from "./Pages/Librería/details";
+import Autores from "./Pages/Librería/autores";
+import Libros from "./Pages/Librería/libros";
+
 
 
 
@@ -113,12 +119,13 @@ const App: React.FC = () => {
         <Route path='/music' element={<MusicPlayer handleSelectSong={handleSelectSong} />} />
         <Route path='/artist/:artistName' element={<ArtistsDetails handleSelectSong={handleSelectSong} />} />
         <Route path="/rocknacional" element={<PagRockNacional handleSelectSong={handleSelectSong}/>}/>
-        <Route
-          path="/favoritos"
-          element={<PagFavoritos handleSelect={handleSelect} />}
-        />
+        <Route path="/favoritos" element={<PagFavoritos handleSelect={handleSelect} />} />
+        <Route path="/search" element={<PagSearch handleSelect={handleSelect} handleSelectSong={handleSelectSong} />} />
+        <Route path="/books" element={<Libros/>} />
+        <Route path="/details/:id" element={<Details/>} />
+        <Route path="/autores" element={<Autores/>} />
       </Routes>
-      {(location.pathname === '/music' || location.pathname.startsWith('/artist/') || location.pathname.startsWith('/rocknacional') || location.pathname.startsWith('/favoritos') )  && seleccionarCancion && showReproductor && cancionesFavoritas && (
+      {(location.pathname === '/music' || location.pathname.startsWith('/artist/') || location.pathname.startsWith('/rocknacional') || location.pathname.startsWith('/favoritos') || location.pathname.startsWith('/search') )  && seleccionarCancion && showReproductor && cancionesFavoritas && (
         <div>
           
             <Reproductor seleccionar={seleccionarCancion} onClose={handleCloseReproductor}/> 
@@ -135,12 +142,15 @@ const App: React.FC = () => {
         </div>
       )}
 
-{(location.pathname === '/music' || location.pathname.startsWith('/artist/') || location.pathname.startsWith('/rocknacional') || location.pathname.startsWith('/favoritos') ) && mostrarReproductorFavoritos && seleccionarCancion && (
+{(location.pathname === '/music' || location.pathname.startsWith('/artist/') || location.pathname.startsWith('/rocknacional') || location.pathname.startsWith('/favoritos')  || location.pathname.startsWith('/search')) && mostrarReproductorFavoritos && seleccionarCancion && (
+  <div>
         <ReproductorFavoritos
           cancionesFavoritas={cancionesFavoritas}
           seleccionarCancion={seleccionarCancion}
           onClose={handleCloseReproductor}
         />
+</div>
+        
       )}
       
       

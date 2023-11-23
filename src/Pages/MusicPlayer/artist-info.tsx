@@ -5,69 +5,92 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import SyncIcon from "@mui/icons-material/Sync";
-import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
-import { ThemeProvider } from '@material-ui/core/styles';
-import theme from "./muiTheme"
+import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
+import { ThemeProvider } from "@material-ui/core/styles";
+import theme from "./muiTheme";
 
 interface ArtistInfoProps {
-  seleccionar: string; 
+  seleccionar: string;
 }
 
-const ArtistInfo: FunctionComponent<ArtistInfoProps> = ({seleccionar}) => {
-  const seleccionarArtista = artistas.find((artista) => artista.name === seleccionar)
-  
+const ArtistInfo: FunctionComponent<ArtistInfoProps> = ({ seleccionar }) => {
+  const seleccionarArtista = artistas.find(
+    (artista) => artista.name === seleccionar
+  );
 
-  
-  
   return (
     <ThemeProvider theme={theme}>
-    <Row>
-      {seleccionarArtista?.background_image ? (
-      <ImgBg src={seleccionarArtista?.background_image} alt="" />
-      ) : ("") } 
-      <FavoriteBorderIcon
-        sx={{
-          position: "absolute",
-          marginTop: "0.5rem",
-          marginLeft: "0.5rem",
-          color: "#CDD2D9",
-          cursor: "pointer",
-        }}
-      />
+      <Row sx={{ "@media (max-width: 390px)": {
+              width: "100%"
+            },}}>
+        {seleccionarArtista?.background_image ? (
+          <ImgBg src={seleccionarArtista?.background_image} alt="" />
+        ) : (
+          ""
+        )}
+        {/* <FavoriteBorderIcon
+          sx={{
+            position: "absolute",
+            marginTop: "0.5rem",
+            marginLeft: "0.5rem",
+            color: "#CDD2D9",
+            cursor: "pointer",
+          }}
+        /> BORDE DE FAVORITOS INUTILIZABLE*/} 
+        
 
-      <Img src={seleccionarArtista?.photo_url} alt="" />
-      <Typography
-        color="aliceblue"
-        sx={{
-          position: "absolute",
-          fontSize: 46,
-          marginLeft: "15rem",
-          marginTop: "-15rem",
-   
-        }}
-      >{seleccionarArtista?.name}</Typography>
-      <Typography
-        color="#545864"
-        sx={{
-          position: "absolute",
-          fontSize: 14,
-          fontWeight: "bold",
-          marginLeft: "15rem",
-          marginTop: "-11rem",
-    
-        }}
-      >{seleccionarArtista?.genre?.map((genero) => genero).join(", ")}</Typography>
-      <Typography
-        color="aliceblue"
-        sx={{
-          position: "absolute",
-          fontSize: 16,
-          marginLeft: "15rem",
-          marginTop: "-9rem",
-        }}
-      >{seleccionarArtista?.bio}</Typography>
-     
-      {/* <Button
+        <Img src={seleccionarArtista?.photo_url} alt="" />
+        <Typography
+          color="aliceblue"
+          sx={{
+            position: "absolute",
+            fontSize: 46,
+            marginLeft: "15rem",
+            marginTop: "-15rem",
+            "@media (max-width: 390px)": {
+              marginTop: "0rem",
+              marginLeft: "32rem",
+              fontSize: 36,
+            },
+          }}
+        >
+          {seleccionarArtista?.name}
+        </Typography>
+        <Typography
+          color="#545864"
+          sx={{
+            position: "absolute",
+            fontSize: 14,
+            fontWeight: "bold",
+            marginLeft: "15rem",
+            marginTop: "-11rem",
+            "@media (max-width: 390px)": {
+              marginTop: "3rem",
+              marginLeft: "32rem",
+              fontSize: 16,
+            },
+          }}
+        >
+          {seleccionarArtista?.genre?.map((genero) => genero).join(", ")}
+        </Typography>
+        <Typography
+          color="aliceblue"
+          sx={{
+            position: "absolute",
+            fontSize: 16,
+            marginLeft: "15rem",
+            marginTop: "-9rem",
+            "@media (max-width: 390px)": {
+              marginTop: "5rem",
+              marginLeft: "32rem",
+              fontSize: 22,
+            },
+          }}
+        >
+          {seleccionarArtista?.bio}
+        </Typography>
+
+        {/* <Button
         sx={{
           position: "absolute",
           border: "2px solid #ed215e",
@@ -91,12 +114,11 @@ const ArtistInfo: FunctionComponent<ArtistInfoProps> = ({seleccionar}) => {
         />
         MIX
       </Button> */}
-      
-      <ShareOutlinedIcon sx={{position: "absolute", marginLeft: "18rem", marginTop: "12.2rem", color: "#ed215e", fontSize: 30, cursor: "pointer" }}/>
-    </Row>
+
+        {/* <ShareOutlinedIcon sx={{position: "absolute", marginLeft: "18rem", marginTop: "12.2rem", color: "#ed215e", fontSize: 30, cursor: "pointer" }}/> */}
+      </Row>
     </ThemeProvider>
   );
-
 };
 
 export default ArtistInfo;
@@ -112,6 +134,12 @@ const Img = styled("img")(() => ({
   width: "220px",
   height: "230px",
   borderRadius: "5px",
+  "@media (max-width: 390px)": {
+    width: "230px",
+    height: "230px",
+    borderRadius: "5px",
+    marginLeft: "50rem",
+  },
 }));
 
 const ImgBg = styled("img")(() => ({
@@ -121,8 +149,8 @@ const ImgBg = styled("img")(() => ({
   top: 0,
   left: 0,
   width: "100vw",
-  height: "100vh",
+  height: "auto",
   zIndex: "-9999",
   filter: "blur(2px)",
-  opacity: 0.7,
+  opacity: 0.1,
 }));

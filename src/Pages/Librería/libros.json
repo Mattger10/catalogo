@@ -1,0 +1,389 @@
+[
+    {
+        "id": 0,
+        "título": "Cuentos completos",
+        "autor": "Edgar Allan Poe",
+        "publicación": "Noviembre de 2019",
+        "género": "Terror",
+        "imagen": "https://www.edhasa.com.ar/wp-content/uploads/integracion/producto_portada/2023/07/15046--9788435010375.jpg",
+        "sinopsis": "«Los hombres me han llamado loco; pero no está esclarecida la cuestión de si la locura es o no es lo sublime de la inteligencia.» Edgar Allan Poe llevó a cabo lo que ningún escritor había logrado antes: liberar las terribles imágenes que atesora el subconsciente para dejarlas caminar entre sus páginas. Abanderado de la novela gótica y precursor del relato detectivesco y de la ciencia ficción; sus historias llevan el suspense y el desasosiego hasta una perfección nunca alcanzada y quizá jamás alcanzable de nuevo."
+    },
+    {
+        "id": 1,
+        "título": "El Cementerio del Diablo",
+        "autor": "Anónimo",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://image.cdn0.buscalibre.com/60e3956f8463b5f3158bc04e.__RS360x360__.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 2,
+        "título": "Tú eres el mal",
+        "autor": "Roberto Constantini",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/36/01/360170ffe3f2f7d4de29c0e08072f7a3.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 3,
+        "título": "Pecadores",
+        "autor": "Olivia Cunning",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://image.cdn0.buscalibre.com/60e395658463b5f3158bbb57.__RS360x360__.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 4,
+        "título": "La marca de sangre",
+        "autor": "Johan Theorin",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://covers.alibrate.com/b/59872ea2cba2bce50c1d8b35/d7bc1a86-0d0f-4ef0-8caf-3b8edc7d09b6/share",
+        "sinopsis": ""
+    },
+    {
+        "id": 5,
+        "título": "La tormenta de nieve",
+        "autor": "Johan Theorin",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://images.cdn1.buscalibre.com/fit-in/360x360/f9/c3/f9c357afff3245ba5cc3d2d108993f4b.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 6,
+        "título": "La cara del miedo",
+        "autor": " Nikolaj Frobenius",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://www.penguinlibros.com/ar/2825985/la-cara-del-miedo.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 7,
+        "título": "Lugares asombrosos",
+        "autor": "Luisito Comunica",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://www.penguinlibros.com/ar/1645453/lugares-asombrosos.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 8,
+        "título": "Hablaré cuando esté muerto",
+        "autor": "Anna Jansson",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://idealex.press/wp-content/uploads/2018/08/Hablar%C3%A9-cuando-est%C3%A9-muerto.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 9,
+        "título": "Atrapado en un sueño",
+        "autor": "Anna Jansson",
+        "publicación": "Julio de 2011",
+        "género": "Misterio",
+        "imagen": "https://planetalibro.net/biblioteca/a/n/anna/anna-jansson-atrapado-en-un-sueno/anna-jansson-atrapado-en-un-sueno.webp",
+        "sinopsis": "Las calles de Gotland se han vuelto peligrosas, piensa la inspectora  Maria Wern después de sufrir una violenta agresión a manos de un grupo  de adolescentes. Y los acontecimientos confirman sus temores... El  cadáver de una joven enfermera -decapitada, vestida de novia y con un  macabro ramo de lirios en las manos- es solo el primer eslabón de una  trágica cadena de asesinatos. Como si fuera el eco de una siniestra  leyenda, la muerte parece rondar por la hermosa isla sueca dejando su  sello inconfundible, una misteriosa letra K en el cuerpo de sus víctimas."
+    },
+    {
+        "id": 10,
+        "título": "O ella muere",
+        "autor": "Gregg Hurwitz",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://m.media-amazon.com/images/I/910AcIC1aXL._AC_UF1000,1000_QL80_.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 11,
+        "título": "El libro de las almas",
+        "autor": "Gleen Cooper",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://www.penguinlibros.com/ar/1593221/el-libro-de-las-almas-la-biblioteca-de-los-muertos-2.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 12,
+        "título": "El alquimista",
+        "autor": "Paulo Coelho",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://3.bp.blogspot.com/-d7pPLaCoolQ/UHTolzOrybI/AAAAAAAAAYI/-bfgNETKfWk/s1600/El+Alquimista-+Paulo+Cohelo+(www.cenizasdepapel.blogspot.com).jpgg",
+        "sinopsis": ""
+    },
+    {
+        "id": 13,
+        "título": "Las crónicas de Narnia",
+        "autor": "C. S. Lewis",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/I/91QUMbfwnTL.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 14,
+        "título": "Tres",
+        "autor": "Melissa Panarello",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://contentv2.tap-commerce.com/cover/large/9789870428312_1.jpg?id_com=1102",
+        "sinopsis": ""
+    },
+    {
+        "id": 15,
+        "título": "No quiero crecer",
+        "autor": "Pilar Sordo",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1342056199i/15747418.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 16,
+        "título": "Las hortencias y otros relatos",
+        "autor": "Felisberto Hernández",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://www.elcuencodeplata.com.ar/media/libros/95/2033/9789871228706.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 17,
+        "título": "El botín",
+        "autor": "Laura Escudero Tobler",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://www.normainfantilyjuvenil.com/ar/uploads/2019/05/resized/800_9789875454408_1.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 18,
+        "título": "Los ojos del perro siberiano",
+        "autor": "Antonio Santa Ana",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://covers.alibrate.com/b/59e1275e27c36459bb7aee96/f901fdaf-8135-4b26-8a76-b43a3c7382ac/share",
+        "sinopsis": ""
+    },
+    {
+        "id": 19,
+        "título": "Un crimen secundario",
+        "autor": "Marcelo Birmajer",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1347662173i/7031503.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 20,
+        "título": "Las botas de anselmo soria",
+        "autor": "Pedro Orgambide",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://imgserver1.fierro.com.ar/get/thumb/350/600/COLCI-101202-0=9789505812028.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 21,
+        "título": "El diario de Ana Frank",
+        "autor": "Ana Frank",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://contentv2.tap-commerce.com/cover/large/9789871594313_1.jpg?id_com=0",
+        "sinopsis": ""
+    },
+    {
+        "id": 22,
+        "título": "Feng Shui",
+        "autor": "Anónimo",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/4a/49/4a49fcb48fef73e532e66e54255063b2.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 23,
+        "título": "20 poemas de amor y una canción desesperada",
+        "autor": "Pablo Neruda",
+        "publicación": "Junio de 1924",
+        "género": "Poesía",
+        "imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/c5/ba/c5baee49526be2285b994485dc34dab3.jpg",
+        "sinopsis": "El libro 20 poemas de amor y una canción desesperada aborda esencialmente el tema del amor, el recuerdo y el abandono. Los poemas abren develando de entrada el erotismo que se suscita entre dos jóvenes amantes, pero al mismo tiempo lo que queda detrás del olvido."
+    },
+    {
+        "id": 24,
+        "título": "El anticristo",
+        "autor": "Friedrich Nietzsche",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_973557-MLA29706474437_032019-O.webp",
+        "sinopsis": ""
+    },
+    {
+        "id": 25,
+        "título": "Poema de Mío Cid",
+        "autor": "Anónimo",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_971412-MLA25695729888_062017-O.webp",
+        "sinopsis": ""
+    },
+    {
+        "id": 26,
+        "título": "Crónica de una muerte anunciada",
+        "autor": "Gabriel García Márquez",
+        "publicación": "1981",
+        "género": "Novela, policial.",
+        "imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/13/97/1397a4f28df5ed21f99177884f3276bd.jpg",
+        "sinopsis": "Crónica de una muerte anunciada relata la historia del asesinato de Santiago Nasar, un joven de 21 años, con ascendencia árabe y católico, quien gobernaba la hacienda de su difunto padre y estaba comprometido con Flora Miguel."
+    },
+    {
+        "id": 27,
+        "título": "Cuentos de la selva",
+        "autor": "Horacio Quiroga",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://www.normainfantilyjuvenil.com/ar/uploads/2019/05/9789501323337.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 28,
+        "título": "Poemas con famosos",
+        "autor": "Tony Zalazar",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://image.slidesharecdn.com/poemasconfamosos-2010-100519105945-phpapp02/75/poemas-con-famosos-2010-1-2048.jpg?cb=1666610152",
+        "sinopsis": ""
+    },
+    {
+        "id": 29,
+        "título": "Canta, musa",
+        "autor": "Diego Bentivegna , Cecilia Romana",
+        "publicación": "Enero de 2014",
+        "género": "Mito",
+        "imagen": "https://www.normainfantilyjuvenil.com/ar/uploads/2019/05/resized/800_9789501323313.jpg",
+        "sinopsis": "¡Canta, musa! presenta un conjunto de relatos que con erudición, arte y amenidad reconstruyen los antecedentes, el desarrollo y lo sucedido despúés del más célebre enfrentamiento de pueblos."
+    },
+    {
+        "id": 30,
+        "título": "La telaraña y otros cuentos",
+        "autor": "Saki",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://contentv2.tap-commerce.com//cover/large/9789871306275_1.jpg?id_com=717",
+        "sinopsis": ""
+    },
+    {
+        "id": 31,
+        "título": "El principito",
+        "autor": "Antoine de Saint-Exupéry",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://www.penguinlibros.com/ar/1607101/el-principito-edicion-oficial.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 32,
+        "título": "Romeo y Julieta",
+        "autor": "William Shakespeare",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/ba/69/ba694cd6db3336d0fd36e75377399269.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 33,
+        "título": "Phineas y Ferb: Demonios",
+        "autor": "Dan Povenmire y Jeff Marsh",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://contentv2.tap-commerce.com//cover/large/9789870419679_1.jpg?id_com=717",
+        "sinopsis": ""
+    },
+    {
+        "id": 34,
+        "título": "Ser de ruido",
+        "autor": "Tony Zalazar",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://www.diarionorte.com/content/bucket/2/178232w750h1063c.jpg.webp",
+        "sinopsis": ""
+    },
+    {
+        "id": 35,
+        "título": "Oliver Twist",
+        "autor": "Charles Dickens",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://pics.filmaffinity.com/Oliver_Twist-934675930-large.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 36,
+        "título": "Hamlet",
+        "autor": "William Shakespeare",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://cdn.kobo.com/book-images/389c6a10-f026-4bbe-a132-34072053689a/1200/1200/False/hamlet-271.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 37,
+        "título": "Viaje al centro de la tierra",
+        "autor": "Julio Verne",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/689376.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 38,
+        "título": "El retrato de Dorian Gray",
+        "autor": "Oscar Wilde",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/91/18/9118645bef1e527a3e1f14e7187ac89e.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 39,
+        "título": "Las aventuras de Sherlock",
+        "autor": "Arthur Conan Doyle",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://images.cdn1.buscalibre.com/fit-in/360x360/07/c8/07c8ab4dfef3c9dcd62c9685707492b3.jpg",
+        "sinopsis": ""
+    },
+    {
+        "id": 40,
+        "título": "Tessa tiene razón",
+        "autor": "Corín Tellado",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://scontent-eze1-1.xx.fbcdn.net/v/t1.18169-9/305586_512458535442466_513638338_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=c2f564&_nc_eui2=AeFJykPystHElktN_eXHM4zlEHKrvjZS7oAQcqu-NlLugKtez-dhOHcng4gj6ueZg3A3IAFaIyKbptNTnkxqBJzj&_nc_ohc=e8eUDTKbQ2kAX8l0E9Q&_nc_ht=scontent-eze1-1.xx&oh=00_AfDjOUK6t8EfG7Xr46hGJnPHTGGI-UQWnAD3Yd8_d3-cFA&oe=65853DAE",
+        "sinopsis": ""
+    },
+    {
+        "id": 41,
+        "título": "Antología Esencial",
+        "autor": "Pablo Neruda",
+        "publicación": "Julio de 1998",
+        "género": "Poesía",
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_645118-MLA43346044514_092020-O.webp",
+        "sinopsis": "Cuando Karl Ragnar Gierow, de la Academia Sueca, entregó el Premio Nobel de Literatura al legendario poeta chileno Pablo Neruda en 1971, proclamó: 'Neruda es como atrapar un cóndor con un cazamariposas. Neruda, en pocas palabras, es una proposición irrazonable: el El núcleo revienta la cáscara.'"
+    },
+    {
+        "id": 42,
+        "título": "Héroe",
+        "autor": "Ronda Byrne",
+        "publicación": "02/02/2011",
+        "género": "Terror",
+        "imagen": "https://images.cdn1.buscalibre.com/fit-in/360x360/e8/1b/e81be5fd5f7464ca955c3365cff8677f.jpg",
+        "sinopsis": ""
+    }
+]

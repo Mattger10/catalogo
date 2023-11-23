@@ -14,18 +14,16 @@ import ShareIcon from "@mui/icons-material/Share";
 import rocknacional from "./Rocknacional.json";
 import recommended from "./recommended.json";
 import artistas from "./artists.json";
-
-
-
+import HeartBrokenIcon from "@mui/icons-material/HeartBroken";
 
 export interface CancionFavorita {
   songName: string;
   song_url: string;
   icon?: string; // Haz que la propiedad 'icon' sea opcional
   artists_evolved: string[];
-  album: string// Agrega aquí cualquier otra información que necesites para el reproductor
-  number: string
-  duration: string
+  album: string; // Agrega aquí cualquier otra información que necesites para el reproductor
+  number: string;
+  duration: string;
 }
 
 interface FavoritosProps {
@@ -34,9 +32,9 @@ interface FavoritosProps {
 }
 
 const Favoritos: React.FunctionComponent<FavoritosProps> = ({
-  handleSelect, mostrarTabla 
+  handleSelect,
+  mostrarTabla,
 }) => {
-  
   const [selectedSong, setSelectedSong] = React.useState<string | null>(null);
   const [favoritos, setFavoritos] = React.useState<string[]>(() => {
     const storedFavoritos = localStorage.getItem("favoritos");
@@ -49,9 +47,9 @@ const Favoritos: React.FunctionComponent<FavoritosProps> = ({
     ...artistas.flatMap((artista) => artista.songs),
   ];
 
-const cancionesFavoritas = allSongs.filter((song) =>
-favoritos.includes(song.songName)
-);
+  const cancionesFavoritas = allSongs.filter((song) =>
+    favoritos.includes(song.songName)
+  );
 
   const handleToggleFavorito = (songName: string) => {
     if (favoritos.includes(songName)) {
@@ -68,11 +66,12 @@ favoritos.includes(song.songName)
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
   }, [favoritos]);
 
-  const [mostrarReproductorFavoritos, setMostrarReproductorFavoritos] = React.useState(false);
+  const [mostrarReproductorFavoritos, setMostrarReproductorFavoritos] =
+    React.useState(false);
 
-  const handlePlayPause = (song: string) => { 
-    handleSelect(song)
-   setMostrarReproductorFavoritos(true);
+  const handlePlayPause = (song: string) => {
+    handleSelect(song);
+    setMostrarReproductorFavoritos(true);
   };
 
   const handleCloseReproductor = () => {
@@ -89,23 +88,32 @@ favoritos.includes(song.songName)
           fontFamily: "font2",
         }}
       >
-        No hay favoritos seleccionados.
+        No hay favoritos seleccionados
+        <HeartBrokenIcon
+              sx={{
+                position: "absolute",
+                fontSize: "38px",
+                marginTop: "0.6rem",
+                marginLeft: "1rem",
+                color: "#ed215e",
+              }}
+            />
       </Typography>
+      
     );
-  } else { 
-
+  } else {
     return (
       <div>
-        
         <TableContainer
           component={Paper}
           sx={{
             backgroundColor: "transparent",
             padding: 2,
-            marginTop: "5rem",
+            marginTop: "3rem",
             borderBottom: "1px solid white",
             borderRadius: "0px",
             boxShadow: "none",
+            marginBottom: "5rem"
           }}
         >
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -229,10 +237,7 @@ favoritos.includes(song.songName)
                       />
                     )}
                     <PlayCircleOutlineIcon
-                    
-                      onClick={() =>
-                        handlePlayPause(song.song_url)
-                      }
+                      onClick={() => handlePlayPause(song.song_url)}
                       sx={{
                         position: "absolute",
                         marginLeft: "7rem",
@@ -243,7 +248,7 @@ favoritos.includes(song.songName)
                         },
                       }}
                     />
-                    
+
                     <audio
                       ref={audioRef}
                       controls
@@ -258,7 +263,6 @@ favoritos.includes(song.songName)
                       width: "20rem",
                     }}
                   >
-                    
                     <Typography sx={{ marginLeft: "5.5rem" }}>
                       {song.songName}
                     </Typography>
@@ -272,11 +276,11 @@ favoritos.includes(song.songName)
                     }}
                   >
                     <Typography sx={{ marginLeft: "10rem" }}>
-                      {song.artists_evolved}
+                      {song.artists_evolved.join(", ")}
                     </Typography>
                   </TableCell>
                   <TableCell
-                    align="center"
+                    align="left"
                     sx={{ backgroundColor: "transparent", color: "aliceblue" }}
                   >
                     {song.album}
@@ -295,19 +299,13 @@ favoritos.includes(song.songName)
                   </TableCell>
                 </TableRow>
               ))}
-
             </TableBody>
           </Table>
         </TableContainer>
-      
-
-
-
       </div>
     );
   }
 };
-
 
 export default Favoritos;
 

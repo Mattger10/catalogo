@@ -1,18 +1,17 @@
-import { Box, styled } from "@mui/material";
+import { Box, styled, Typography } from "@mui/material";
 import { FunctionComponent, useEffect, useState } from "react";
 import artistas from "./artists.json";
 import { Link, useNavigate } from "react-router-dom";
-import { ThemeProvider } from '@material-ui/core/styles';
-import theme from "./muiTheme"
+import { ThemeProvider } from "@material-ui/core/styles";
+import theme from "./muiTheme";
 
 interface ArtistsRowProps {
   onImageClick: (name: string) => void;
 }
-  
 
-const ArtistsRow: FunctionComponent<ArtistsRowProps> = ({onImageClick}) => {
+const ArtistsRow: FunctionComponent<ArtistsRowProps> = ({ onImageClick }) => {
   const [seleccionarArtista, setSeleccionarArtista] = useState<string>("");
-  const [seleccionarArtista2, setSeleccionarArtista2] = useState<string>("");
+   artistas.sort((a, b) => a.name.localeCompare(b.name));
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,63 +20,94 @@ const ArtistsRow: FunctionComponent<ArtistsRowProps> = ({onImageClick}) => {
     }
   }, []);
 
- 
-  const alternarMostrarInfo = (name: string) => { 
-  setSeleccionarArtista(name);
-  onImageClick(name);
-  navigate(`/artist/${name}`)
-  };
-
-  const handleMouseEnter = (name: string) => {
+  const alternarMostrarInfo = (name: string) => {
     setSeleccionarArtista(name);
+    onImageClick(name);
+    navigate(`/artist/${name}`);
   };
 
-  const handleMouseLeave = () => {
-    setSeleccionarArtista("");
-  };
-
-  const handleMouseEnter2 = (name: string) => {
-    setSeleccionarArtista2(name);
-  };
-
-  const handleMouseLeave2 = () => {
-    setSeleccionarArtista2("");
-  };
 
   return (
     <ThemeProvider theme={theme}>
-    <Row>
-      {artistas.slice(0, 20).map((artista, index) => (
-        <ImageContainer key={artista.name}>
-          <Image
-            width={220}
-            height={220}
-            src={artista.photo_url}
-            alt={artista.name}
-            onClick={() => alternarMostrarInfo(artista.name)}
-            onMouseEnter={() => {
-              handleMouseEnter(artista.name);
-              handleMouseEnter2(artista.name);
-            }}
-            onMouseLeave={() => {
-              handleMouseLeave();
-              handleMouseLeave2();
-            }}
-          />
-          {seleccionarArtista === artista.name && (
-            <HoverText className="show">{artista.name}</HoverText>
-          )}
-          {seleccionarArtista2 === artista.name && (
-            <HoverText2 className="show">{artista.genre?.join(", ")}</HoverText2>
-          )}
-        </ImageContainer>
-      ))}
-    </Row>
+      <Box sx={{ padding: 0, marginTop: "-4rem" }}>
+          <StyledUlContainer >
+            <StyledUl>
+            {artistas.slice(0, 20).map((artista, index) => (
+              <StyledLi key={index}>
+                <Img
+                  width={200}
+                  height={200}
+                  src={artista.photo_url}
+                  alt={artista.name}
+                  onClick={() => alternarMostrarInfo(artista.name)}
+                />
+                <Typography
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    color: "#fff",
+                    fontSize: "14px",
+                  }}
+                >
+                  {artista.name}
+                </Typography>
+                <Typography
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    color: "#fff",
+                    fontSize: "10px",
+                    marginBottom: "10px",
+                  }}
+                >
+                  {artista.genre.join(", ")}
+                </Typography>
+              </StyledLi>
+            ))}
+            </StyledUl>
+          </StyledUlContainer>
+      </Box>
     </ThemeProvider>
   );
 };
 
 export default ArtistsRow;
+
+const StyledUlContainer = styled("div")({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginTop: "5rem"
+});
+
+const StyledUl = styled("ul")({
+  display: 'flex',
+  justifyContent: 'flex-start',
+  flexWrap: 'wrap', 
+  padding: 0,
+  margin: 0,
+  listStyle: 'none',
+  gap: '20px', 
+  width: "100%",
+});
+
+const StyledLi = styled("li")({
+  backgroundColor: "#222432",
+  width: "200px",
+  height: "auto",
+  borderRadius: "10px",
+});
+
+const Img = styled("img")({
+  borderTopLeftRadius: "10px",
+  borderTopRightRadius: "10px",
+  backgroundColor: "black",
+  cursor: "pointer",
+  ":hover": {
+    opacity: 0.7,
+  },
+});
 
 const Row = styled(Box)(() => ({
   marginTop: "3rem",
@@ -91,21 +121,21 @@ const Image = styled("img")(() => ({
   marginTop: "2rem",
   "&:hover": {
     cursor: "pointer",
-    opacity: "0.5"
+    opacity: "0.5",
   },
 }));
 
-const Img = styled("div")(() => ({
-  backgroundRepeat: "no-repeat",
-  backgroundPosition: "center",
-  backgroundColor: "#1a191f",
-  position: "fixed",
-  top: 0,
-  left: 0,
-  width: "100vw",
-  height: "100vh",
-  zIndex: "-9999",
-}));
+// const Img = styled("div")(() => ({
+//   backgroundRepeat: "no-repeat",
+//   backgroundPosition: "center",
+//   backgroundColor: "#1a191f",
+//   position: "fixed",
+//   top: 0,
+//   left: 0,
+//   width: "100vw",
+//   height: "100vh",
+//   zIndex: "-9999",
+// }));
 
 const HoverText = styled("div")(() => ({
   position: "absolute",
